@@ -12,35 +12,38 @@ Geração de Números Primos: O cliente gera números aleatórios para P e G e o
 Criptografia dos Parâmetros: Os valores de G e P são criptografados utilizando a cifra de César em nível de bytes e codificados em Base64 antes de serem enviados ao servidor.
 Troca de Chaves: Após a troca dos parâmetros, o servidor e o cliente realizam a troca de chaves públicas (também criptografadas) e calculam o segredo compartilhado.
 Troca de Mensagens: Utilizando o segredo compartilhado, ambos os lados podem criptografar e decifrar mensagens trocadas.
-Estrutura do Projeto
-bash
-Copiar
+
+Estrutura do Projeto bash
+```
 ├── server.py    # Código do servidor: recebe parâmetros, gera chave pública e troca mensagens.
 ├── client.py    # Código do cliente: gera números primos, criptografa os parâmetros e realiza a troca de chaves.
 └── README.md    # Este arquivo.
-Pré-requisitos
-Python 3.x
-Módulos utilizados:
-socket
-random
-base64
-time (utilizado no teste de primalidade simples no cliente)
+```
+
+## Pré-requisitos
+- Python 3.x
+- Módulos utilizados:
+- socket
+- random
+- base64
+- time (utilizado no teste de primalidade simples no cliente)
 Observação: Os números primos usados neste exemplo são gerados em intervalos pequenos para fins didáticos. Em uma aplicação real, eles deveriam ser significativamente maiores para garantir a segurança do protocolo.
 
-Instruções de Uso
+## Instruções de Uso
 Passo 1: Executar o Servidor
 Abra um terminal.
 Execute o script do servidor:
-bash
-Copiar
+
+```
 python server.py
+```
 O servidor ficará aguardando uma conexão na porta configurada (por padrão, 127.0.0.1:65432).
 Passo 2: Executar o Cliente
 Abra outro terminal.
 Execute o script do cliente:
-bash
-Copiar
+```
 python client.py
+```
 O cliente irá:
 Gerar e validar os números primos P e G.
 Criptografar e enviar os parâmetros para o servidor.
@@ -48,31 +51,19 @@ Gerar sua chave privada e pública.
 Realizar a troca de chaves com o servidor.
 Enviar uma mensagem criptografada utilizando o segredo compartilhado.
 Receber e decifrar a resposta do servidor.
-Detalhes Técnicos
-Módulo 256
+# Detalhes Técnicos
+- Módulo 256
 Objetivo:
 Operar com bytes, garantindo que, ao aplicar operações (como soma ou subtração para a cifra de César), os resultados se mantenham dentro do intervalo de 0 a 255.
 
 Exemplo:
 Um byte com valor 255, ao ter um shift de 3 aplicado, resultará em:
-
-(
-255
-+
-3
-)
-m
-o
-d
- 
- 
-256
-=
-2
-(255+3)mod256=2
+```
+(255 + 3) mod 256 = 2
+```
 Assim, o valor se "enrola" e permanece dentro dos limites de um byte.
 
-Base64
+# Base64
 Objetivo:
 Converter os dados binários resultantes da cifra (que podem conter caracteres não imprimíveis ou de controle) em uma string composta por caracteres seguros e imprimíveis.
 
