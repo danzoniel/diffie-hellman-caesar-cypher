@@ -1,4 +1,4 @@
-#Projeto: Troca de Chaves Diffie–Hellman com Criptografia de Parâmetros via Cifra de César e Base64
+# Projeto: Troca de Chaves Diffie–Hellman com Criptografia de Parâmetros via Cifra de César e Base64
 
 Este projeto demonstra a implementação de um protocolo de troca de chaves Diffie–Hellman, combinando uma cifra de César aplicada em nível de bytes com codificação Base64 para transmitir parâmetros e mensagens de forma segura entre um cliente e um servidor em Python.
 
