@@ -13,7 +13,7 @@ Criptografia dos Parâmetros: Os valores de G e P são criptografados utilizando
 Troca de Chaves: Após a troca dos parâmetros, o servidor e o cliente realizam a troca de chaves públicas (também criptografadas) e calculam o segredo compartilhado.
 Troca de Mensagens: Utilizando o segredo compartilhado, ambos os lados podem criptografar e decifrar mensagens trocadas.
 
-Estrutura do Projeto bash
+Estrutura do Projeto
 ```
 ├── server.py    # Código do servidor: recebe parâmetros, gera chave pública e troca mensagens.
 ├── client.py    # Código do cliente: gera números primos, criptografa os parâmetros e realiza a troca de chaves.
